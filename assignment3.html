@@ -17,7 +17,7 @@
         for(age=0; age<=60; age++){
             if(age<10)
             console.log("you are child")
-            else if(age<10 && age>18) {
+            else if(age<18 && age>10) {
                 console.log("you are teen")
             }
             else if (age>18 && age<40){
@@ -29,19 +29,42 @@
             
         }
 
-        /*let age1 =(agetype) =>{
-            switch (agetype) {
-                case1 "age<10" :
-                console.log("you ate young");
+        let test = (newage) => {
+                switch (true) {
+                    case (newage < 10):
+                        console.log("you are young");
+                        break;
+                    case (newage < 18 && newage > 10):
+                        console.log("you are teen");
+                        break;
+                    case (newage > 18 && newage < 40):
+                        console.log("you are young");
+                        break;
+                    case (newage > 40):
+                        console.log("you are moving towards old");
+                        break;
+                        dafault: console.log("you are dead");
+                }
             }
-            case2 "age<10 && age>18" :
-                console.log("you are teen");
-                case3 "age>18 && age<40" :
-                console.log("you are young");
-                case4 "age>40" :
-                console.log("you are moving towards old")
-        }*/
+            test(20)
+        
 
+
+
+     let var1 = 10
+     let var2 = 15
+     let var3 = var1
+     var1 = var2
+     var2 = var3
+     console.log("var1", var1)
+     console.log("var2", var2)
+
+
+     for(x=1; x<=10; x++){
+     console.log(x*2)}
+
+
+        
 
     </script>
 </head>
