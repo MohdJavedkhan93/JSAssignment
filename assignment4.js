@@ -52,9 +52,13 @@ var members = [
     position: "Employee",
   },
 ];
-var allinterns = members.filter((interns) => interns.position == "Intern");
-console.log(allinterns);
+var listofInternemployees = members.filter(
+  (interns) => interns.position == "Intern"
+);
+console.log(listofInternemployees);
 
+// Expected List: i) List of all permanent employees.
+// ii) List of all non-permanent employees.
 var members = [
   {
     id: 111,
@@ -81,11 +85,12 @@ var members = [
   { id: 89, name: "Brent Dolan", workExp: 16, deptExp: 12, isPermanent: true },
 ];
 
-const permemployees = members.filter(
+const listofpermanentemployees = members.filter(
   (permanent) => permanent.isPermanent === true
 );
-console.log(permemployees);
-const nonpermemp = members.filter(
+console.log(listofpermanentemployees);
+
+const listofnonpermanentemployees = members.filter(
   (permanent) => permanent.isPermanent === false
 );
-console.log(nonpermemp);
+console.log(listofnonpermanentemployees);
