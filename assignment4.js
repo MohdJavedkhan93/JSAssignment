@@ -28,3 +28,29 @@ for (let i = 0; i < n; i++) {
   sum += totalyears[i];
 }
 console.log(sum);
+
+// list of Intern employee
+var members = [
+  {
+    id: 111,
+    name: "Chelsea Foster",
+    position: "Intern",
+  },
+  {
+    id: 102,
+    name: "Aggie Sparling",
+    position: "Employee",
+  },
+  {
+    id: 123,
+    name: "Timmy Matthews",
+    position: "Intern",
+  },
+  {
+    id: 66,
+    name: "Emmet Foster",
+    position: "Employee",
+  },
+];
+var allinterns = members.filter((interns) => interns.position == "Intern");
+console.log(allinterns);
