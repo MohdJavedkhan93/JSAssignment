@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <font size="20" color="blue">Calculator</font><br />
+    Input1<input type="text" name="input1" id="number1" /><br />
+    Input2<input type="text" name="input2" id="number2" /><br />
+    <br />
+
+    <p>Expected Result :</p>
+    <span id="result">0</span>
+    <br />
+    <button onclick="performAction('add')">ADD</button>
+    <button onclick="performAction('sub')">SUBTRACT</button>
+    <button onclick="performAction('mul')">MULTIPLY</button>
+    <button onclick="performAction('div')">DIVIDE</button>
+    <script>
+        //with default parameters
+        function performAction(action = "add") {
+            console.log(action)
+            let num1 = parseInt(document.getElementById("number1").value);
+            let num2 = parseInt(document.getElementById("number2").value);
+            //check num2 before divide
+            if (num2 === 0 && action === "div") {
+                console.log("num should be greater than 0.");
+                return;
+            }
+
+            if (action === "add") {
+            let result = num1 + num2;
+                document.getElementById("result").innerHTML = result;
+            } else if (action === "sub") {
+            let result = num1 - num2;
+                document.getElementById("result").innerHTML = result;
+            } else if (action === "mul") {
+                let result = num1 * num2;
+                document.getElementById("result").innerHTML = result;
+            } else if (action === "div") {
+                let result = num1 / num2;
+                document.getElementById("result").innerHTML = result;
+            } 
+
+        }
+        
+        //  <!-- <button onclick="performAction('add)">Add</button>
+        // <button onclick="performAction('sub')">SUBSTRACT</button>
+        //  <button onclick="performAction('div')">DIVIDE</button>
+        // <button onclick="performAction('mul')">MULTIPLY</button>
+        // <script>
+        // function performAction(action == "add") {
+        //     let num1 = parseInt(document.getElementById("number1").value)
+        //     let num2 = parseInt(document.getElementById("number2").value)
+        //     if (num2 == 0 && action == 'div'){
+        //         result;
+        //     }
+        //     if (action === "add") {
+        //         let result = num1 + num2;
+        //         document.getElementById("result").innerHTML = result;
+        //     } else if (action === "sub") {
+        //         let result = num1 - num2;
+        //         document.getElementById("result").innerHTML = result;
+        //     } else if (action === "div") {
+        //         let result = num1 / num2
+        //         document.getElementById("result").innerHTML = result;
+        //     } else if (action === "mul") {
+        //         let result = num1 * num2
+        //         document.getElementById("result").innerHTML = result;
+        //     } 
+        // } -->
+        </script>
+
+      
+</body>
+
+</html>

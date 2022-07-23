@@ -58,9 +58,13 @@
             <button type="button" class="btn btn-primary" id="hideTaskForm" onclick="hideTaskForm()"
                 style="display: none;">Hide Form</button>
             <br />
-            <div id="showText">
-            </div>
-            <button type="button" class="btn btn-primary" id="deleteTaskForm" onclick="deleteTaskForm()" style="display: none;">Delete Data</button>
+            
+            <table id="showText" style="display: none;">
+                
+
+            </table>
+            
+            <!-- <button type="button" class="btn btn-primary" id="deleteTaskForm" onclick="deleteTaskForm()" style="display: none;">Delete Data</button> -->
             <form id="taskForm" class="bg-light p-5 mt-4" style="display:none"
                 onsubmit="event.preventDefault();SubmitData()">
                 <div class="mb-3">
@@ -80,6 +84,8 @@
     <!-- Optional JavaScript; choose one of the two! -->
     <script>
         function showTaskForm() {
+            // alert("okokok")
+            // console.log('working')
             document.getElementById("taskForm").style.display = "block";
             document.getElementById("hideTaskForm").style.display = "block";
             document.getElementById("showTaskForm").style.display = "none";
@@ -93,12 +99,26 @@
             console.log("submit form calll")
         }
         function showFormText () {
-            document.getElementById("deleteTaskForm").style.value ="block";
-            let text = ""
+            document.getElementById("showText").style.display = "block"
+            // document.getElementById("deleteTaskForm").style.display ="block";
+            
             const input1Value = document.getElementById("input1").value;
             const input2Value = document.getElementById("input2").value;
-            text = input1Value + " "  + input2Value
-            document.getElementById("showText").innerHTML = text
+            // document.getElementById("table1").innerHTML = input1Value
+            // document.getElementById("table2").innerHTML = input2Value
+            document.getElementById("showText").innerHTML += "<tr><td>" + input1Value + "</td>" + "<td>" + input2Value + "</td>" + "<td align='center'><a href='#' onclick='deleteTaskForm()'>Delete</a></td></tr>";
+            
+        }
+        function deleteTaskForm (){
+            // document.getElementById("deleteTaskForm").style.display ="none"
+            // document.getElementById("showText").style.display ="none"
+            // document.getElementById("input1").value =""
+            // document.getElementById("input2").value =""
+                var anc = event.target.parentNode;
+                console.log(anc)
+            //var list = anc.parentNode; // the row to be removed
+            anc.parentElement.remove();
+        
         }
     </script>
 </body>
